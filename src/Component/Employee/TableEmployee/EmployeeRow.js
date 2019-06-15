@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 class EmployeeRow extends Component {
     constructor(props) {
         super(props);}
+
+    showEditPoppup=()=>{
+     this.props._showedit()
+    }
     render() {
         return (
             <>
@@ -14,11 +18,11 @@ class EmployeeRow extends Component {
               </span>
             </td>
             <td>{this.props.Employeeinfo.name}</td>
-            <td>thomashardy@mail.com</td>
-            <td>89 Chiaroscuro Rd, Portland, USA</td>
-            <td>(171) 555-2222</td>
+            <td>{this.props.Employeeinfo.mail}</td>
+            <td>{this.props.Employeeinfo.address}</td>
+            <td>{this.props.Employeeinfo.phone}</td>
             <td>
-              <a href="#editEmployeeModal" className="edit" data-toggle="modal"><i className="material-icons" data-toggle="tooltip" title="Edit"></i></a>
+              <a onClick={()=>this.showEditPoppup()} href="#" className="edit" data-toggle="modal"><i className="material-icons" data-toggle="tooltip" title="Edit"></i></a>
               <a href="#deleteEmployeeModal" className="delete" data-toggle="modal"><i className="material-icons" data-toggle="tooltip" title="Delete"></i></a>
             </td>
           </tr>  

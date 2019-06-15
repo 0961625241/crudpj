@@ -28,11 +28,17 @@ class TableEmployee extends Component {
       ]
 
     }
+
    
 
     
     
   }
+  // showEditPopup_ComponentTable = () =>{
+  //   this.props.showAddPoppup_Table()
+    
+  // }
+  
   render() {
     
    
@@ -57,8 +63,8 @@ class TableEmployee extends Component {
           </thead>
           <tbody>
             
-            {this.state.employeeArr.map((item,index)=>{
-              return <EmployeeRow key={'employee' + index} Employeeinfo={item}></EmployeeRow>
+            {this.props.employeeArr_prop.map((item,index)=>{
+              return <EmployeeRow _showedit={this.props.showAddPoppup_Table} key={'employee' + index} Employeeinfo={item}></EmployeeRow>
             })}
             
            
